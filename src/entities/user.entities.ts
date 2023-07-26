@@ -3,7 +3,9 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   CreateDateColumn,
+  OneToMany,
 } from "typeorm";
+import Contact from "./contact.entitie";
 
 @Entity("users")
 class User {
@@ -24,6 +26,9 @@ class User {
 
   @CreateDateColumn()
   createdAt: Date;
+
+  @OneToMany(() => Contact, (contact) => contact.user)
+  contacts: Contact[];
 }
 
 export { User };
