@@ -20,8 +20,11 @@ const updateUserService = async (
     throw new AppError("user not found", 404);
   }
 
-  console.log(oldUser);
-  console.log(userId);
+  if (data.password) {
+    const hashedpassword = await hash(data.password, 7);
+
+    data.password = hashedpassword;
+  }
 
   const newContactdata = userRepository.create({
     ...oldUser,

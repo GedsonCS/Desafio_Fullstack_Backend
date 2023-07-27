@@ -17,7 +17,6 @@ const handleErros = (
   next: NextFunction
 ) => {
   if (err instanceof AppError) {
-    console.log("cheguei aqui3");
     return res.status(err.statusCode).json({
       message: err.message,
     });
@@ -28,8 +27,6 @@ const handleErros = (
       message: err.flatten().fieldErrors,
     });
   }
-
-  console.log(err);
 
   return res.status(500).json("internal server error");
 };

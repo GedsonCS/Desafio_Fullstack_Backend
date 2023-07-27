@@ -27,7 +27,7 @@ userRoutes.patch(
   tokenIsValidMiddleware,
   dataIsValidMidleware(UserSchemaUpdate),
   emailExistsMiddleware,
-  ensureIsOwnerMiddleware,
+  ensureIsOwnerUserMiddleware,
   updateUserController
 );
 userRoutes.delete(

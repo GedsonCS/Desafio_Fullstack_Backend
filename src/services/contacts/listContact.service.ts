@@ -27,8 +27,6 @@ const listContactService = async (
     },
   });
 
-  console.log(contacts);
-
   return ContactsSchemaResponse.parse(contacts);
 };
 
