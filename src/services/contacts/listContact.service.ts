@@ -23,7 +23,7 @@ const listContactService = async (
 
   const contacts = await contactRepository.find({
     where: {
-      user: user,
+      user: { id: user.id },
     },
   });
 

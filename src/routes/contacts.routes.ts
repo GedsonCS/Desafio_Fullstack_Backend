@@ -25,14 +25,15 @@ contsctRoutes.get("", tokenIsValidMiddleware, listContactController);
 contsctRoutes.patch(
   "/:id",
   tokenIsValidMiddleware,
-  // ensureIsOwnerMiddleware,
+  ensureIsOwnerMiddleware,
   dataIsValidMidleware(ContactSchemaUpdate),
   updateContactController
 );
 contsctRoutes.delete(
   "/:id",
-  //ensureIsOwnerMiddleware,
+
   tokenIsValidMiddleware,
+  ensureIsOwnerMiddleware,
   deleteContactController
 );
 
