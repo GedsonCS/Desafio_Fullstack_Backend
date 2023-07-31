@@ -9,9 +9,14 @@ import cors from "cors";
 const app: Application = express();
 app.use(express.json());
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://front-gedsoncs.vercel.app",
+];
+
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: allowedOrigins,
   })
 );
 app.use("/users", userRoutes);
