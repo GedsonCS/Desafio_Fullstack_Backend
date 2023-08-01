@@ -4,6 +4,14 @@ Essa API foi construida com o intuito de cadastrar usuários e os usuários cada
 
 API constuida em node, com isso para rodar socalmente é necessário ter o Node instalado no computador, após isso é necessário clonar o repositório em sua máquina, acessar o projeto e utilizar o comando npm install para instalar as dependencias configure o arquivo.env e em seguida utilize o comando npm run dev para rodar o servidor
 
+para ter acesso a docimentação via Web será necessário primenramente rodar o servidor node com npm rum dev, depois acessar pelo terminal a pasta documentation (cd documentation), após isso rodar o comando npx serve, ele trará uma URL como essa:
+http://localhost:55015
+
+entretanto a porta pode ser outra de forma aleatória
+
+IMPORTANTE
+isso deve ser feito depois de rodar o servidor backend, pois o serve escolhe como padão a porta 3000 do localhost
+
 Rotas da API
 
 Cadastro de usuário
