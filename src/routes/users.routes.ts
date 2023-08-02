@@ -11,6 +11,7 @@ import emailExistsMiddleware from "../middlewares/ensureEmailExists..middleware"
 import tokenIsValidMiddleware from "../middlewares/ensureAuth.middleware";
 import { ensureIsOwnerMiddleware } from "../middlewares/ensureIsOwner.middleware";
 import { ensureIsOwnerUserMiddleware } from "../middlewares/ensureIsOwnerUser.meddleware";
+import emailExistsUpdateMiddleware from "../middlewares/ensureEmailexistsUpdateUsermiddleware";
 
 const userRoutes = Router();
 
@@ -26,7 +27,7 @@ userRoutes.patch(
   "/:id",
   tokenIsValidMiddleware,
   dataIsValidMidleware(UserSchemaUpdate),
-  emailExistsMiddleware,
+  emailExistsUpdateMiddleware,
   ensureIsOwnerUserMiddleware,
   updateUserController
 );

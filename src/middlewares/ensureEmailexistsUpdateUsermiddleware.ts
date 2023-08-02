@@ -6,7 +6,7 @@ import { Repository } from "typeorm";
 import { User } from "../entities/user.entities";
 import { AppDataSource } from "../data-source";
 
-const emailExistsMiddleware = async (
+const emailExistsUpdateMiddleware = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -17,7 +17,9 @@ const emailExistsMiddleware = async (
 
   const user = await userRepository.findOne({ where: { email } });
 
-  console.log(email);
+  if (!email) {
+    return next();
+  }
 
   if (!user) {
     return next();
@@ -26,4 +28,4 @@ const emailExistsMiddleware = async (
   }
 };
 
-export default emailExistsMiddleware;
+export default emailExistsUpdateMiddleware;

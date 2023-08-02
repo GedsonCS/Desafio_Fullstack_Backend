@@ -20,6 +20,10 @@ const updateUserService = async (
     throw new AppError("user not found", 404);
   }
 
+  if (oldUser.email === data.email) {
+    delete data.email;
+  }
+
   if (data.password) {
     const hashedpassword = await hash(data.password, 7);
 
